@@ -1,10 +1,21 @@
 "use client"
 
+import { useState } from "react"
 import type { SiteConfig } from "@/lib/types"
 import PageBanner from "@/components/sections/PageBanner"
 import FadeIn from "@/components/ui/FadeIn"
 
 export default function ContactClient({ site }: { site: SiteConfig }) {
+  const [copied, setCopied] = useState(false)
+
+  function copyEmail(e: React.MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    navigator.clipboard.writeText(site.email)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <div className="flex flex-col gap-8 pb-16">
       <PageBanner
@@ -34,17 +45,51 @@ export default function ContactClient({ site }: { site: SiteConfig }) {
           >
             Email
           </p>
-          <p
-            style={{
-              fontFamily: "'EB Garamond', Georgia, serif",
-              fontSize: "clamp(1.6rem, 4vw, 2.8rem)",
-              fontWeight: 400,
-              color: "#F9F8F6",
-              lineHeight: 1.2,
-            }}
-          >
-            {site.email}
-          </p>
+          <div className="flex items-baseline gap-4 flex-wrap">
+            <p
+              style={{
+                fontFamily: "'EB Garamond', Georgia, serif",
+                fontSize: "clamp(1.6rem, 4vw, 2.8rem)",
+                fontWeight: 400,
+                color: "#F9F8F6",
+                lineHeight: 1.2,
+              }}
+            >
+              {site.email}
+            </p>
+            <button
+              onClick={copyEmail}
+              className="flex items-center gap-1.5 rounded-full transition-all hover:opacity-100 active:scale-95 -translate-y-[10%]"
+              style={{
+                backgroundColor: "rgba(249,248,246,0.1)",
+                color: copied ? "var(--color-accent)" : "rgba(249,248,246,0.55)",
+                fontSize: "0.7rem",
+                padding: "5px 12px",
+                fontFamily: "var(--font-mono, monospace)",
+                letterSpacing: "0.05em",
+                border: "1px solid rgba(249,248,246,0.15)",
+                whiteSpace: "nowrap",
+              }}
+              aria-label="Copy email address"
+            >
+              {copied ? (
+                <>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Copied
+                </>
+              ) : (
+                <>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" strokeWidth="1.8"/>
+                  </svg>
+                  Copy
+                </>
+              )}
+            </button>
+          </div>
           <div className="flex items-center gap-2 mt-6 transition-transform duration-300 group-hover:translate-x-2">
             <span
               style={{
