@@ -1,0 +1,65 @@
+{
+  "handle": "@priyankadatwani",
+  "profileUrl": "https://instagram.com/priyankadatwani",
+  "posts": [
+    {
+      "id": "1",
+      "type": "image",
+      "src": "/instagram/post-1.jpg",
+      "alt": "Brand campaign shot",
+      "caption": "Behind the scenes of our latest campaign"
+    },
+    {
+      "id": "2",
+      "type": "reel",
+      "src": "/instagram/reel-1.mp4",
+      "thumbnail": "/instagram/reel-1-thumb.jpg",
+      "alt": "Brand storytelling reel",
+      "caption": "The art of brand storytelling"
+    },
+    {
+      "id": "3",
+      "type": "image",
+      "src": "/instagram/post-2.jpg",
+      "alt": "Creative direction",
+      "caption": "Creative direction for spring collection"
+    },
+    {
+      "id": "4",
+      "type": "reel",
+      "src": "/instagram/reel-2.mp4",
+      "thumbnail": "/instagram/reel-2-thumb.jpg",
+      "alt": "Packaging design process",
+      "caption": "From concept to shelf"
+    },
+    {
+      "id": "5",
+      "type": "image",
+      "src": "/instagram/post-3.jpg",
+      "alt": "Brand identity work",
+      "caption": "New brand identity reveal"
+    },
+    {
+      "id": "6",
+      "type": "image",
+      "src": "/instagram/post-4.jpg",
+      "alt": "Mood board",
+      "caption": "Mood boarding for an upcoming project"
+    },
+    {
+      "id": "7",
+      "type": "reel",
+      "src": "/instagram/reel-3.mp4",
+      "thumbnail": "/instagram/reel-3-thumb.jpg",
+      "alt": "Design process walkthrough",
+      "caption": "Design process in 30 seconds"
+    },
+    {
+      "id": "8",
+      "type": "image",
+      "src": "/instagram/post-5.jpg",
+      "alt": "Event branding",
+      "caption": "Event branding done right"
+    }
+  ]
+}

@@ -1,26 +1,195 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #F9F8F6;
+  --color-fg: #111110;
+  --color-muted: #8C8B85;
+  --color-border: #E5E4DF;
+  --color-accent: #C9A87C;
+  --color-sidebar-bg: #F0EDE7;
+
+  /* Industry / category pill colors */
+  --pill-edtech-bg:  #D6E8F5; --pill-edtech-text:  #1F5F8A;
+  --pill-crowd-bg:   #F5E6D6; --pill-crowd-text:   #8A4A20;
+  --pill-fab-bg:     #D6F0D8; --pill-fab-text:     #1F6040;
+  --pill-apparel-bg: #F5D6E8; --pill-apparel-text: #8A2050;
+  --pill-music-bg:   #E8D6F5; --pill-music-text:   #5A2A8A;
+  --pill-jewelry-bg: #F5F0D6; --pill-jewelry-text: #7A5518;
+  --pill-deck-bg:    #D6F0EC; --pill-deck-text:    #1A6050;
+  --pill-default-bg: rgba(249,248,246,0.9); --pill-default-text: #111110;
+
+  --sidebar-w: 240px;
+  --main-pad-x: 48px;
+  --main-pad-y: 40px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection { background: var(--color-accent); color: var(--color-fg); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+/* ─── Page layout ────────────────────────────────────────── */
+.page-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar-col {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px;
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.main-col {
+  flex: 1;
+  min-width: 0;
+  padding: var(--main-pad-y) var(--main-pad-x);
+}
+
+@media (max-width: 768px) {
+  .page-layout { flex-direction: column; }
+  .sidebar-col {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 16px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .main-col { padding: 24px 20px; }
+}
+
+/* ─── Carousel ───────────────────────────────────────────── */
+.carousel-section {
+  /* Break out to the right edge of viewport, stay within main-col left */
+  margin-right: calc(-1 * var(--main-pad-x));
+  overflow-x: hidden;
+}
+
+.carousel-row-outer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Vertical padding creates a safe zone for hover scale without clipping */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* Collapse inter-row padding so visual gap matches hero-to-carousel gap (104px) */
+  margin-bottom: 24px;
+  /* Hide scrollbar across browsers */
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE / Edge */
+}
+.carousel-row-outer::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari */
+}
+.carousel-row-outer:last-of-type {
+  margin-bottom: 0;
+  /* Fade edges: left to simulate sidebar fade, right for aesthetics */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 64px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 64px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+}
+
+.carousel-row-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.marquee-set {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+@keyframes mq-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(var(--mq-offset)); }
+}
+
+@keyframes mq-right {
+  from { transform: translateX(var(--mq-offset)); }
+  to   { transform: translateX(0); }
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero-container { min-height: clamp(340px, 55vh, 560px); }
+.hero-text-col {
+  padding: clamp(28px, 4vw, 48px);
+  min-height: clamp(340px, 55vh, 560px);
+  width: 60%;
+}
+.hero-photo-col { width: 45%; }
+.hero-headline { font-size: clamp(3rem, 7vw, 6rem); }
+
+@media (max-width: 768px) {
+  .hero-container { min-height: unset; }
+  .hero-text-col  { width: 100%; min-height: unset; padding: 28px 24px 20px; }
+  .hero-headline  { font-size: clamp(2.8rem, 10vw, 4rem); }
+}
+
+/* Medium screens — tighten layout so text doesn't bleed into photo */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-text-col  { width: 56%; padding: clamp(24px, 3.5vw, 36px); }
+  .hero-photo-col { width: 48%; }
+  .hero-headline  { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
+}
+
+/* Smaller desktop — scale hero headline down */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hero-text-col  { width: 58%; }
+  .hero-photo-col { width: 46%; }
+  .hero-headline  { font-size: clamp(2.6rem, 4.8vw, 4.2rem); }
+}
+
+/* ─── Prose ──────────────────────────────────────────────── */
+.prose { max-width: 680px; line-height: 1.85; }
+.prose h2 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.5rem; font-weight: 400;
+  margin-top: 3.5rem; margin-bottom: 1.25rem;
+  color: var(--color-fg);
+}
+.prose h3 { font-size: 1rem; font-weight: 500; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.prose p { margin-bottom: 1.5rem; color: var(--color-fg); opacity: 0.8; }
+.prose ul { list-style: none; margin-bottom: 1.25rem; }
+.prose ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; opacity: 0.8; }
+.prose ul li::before { content: "—"; position: absolute; left: 0; color: var(--color-accent); }
+.prose strong { font-weight: 600; color: var(--color-fg); opacity: 1; }
+.prose hr { border: none; border-top: 1px solid var(--color-border); margin: 2.5rem 0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

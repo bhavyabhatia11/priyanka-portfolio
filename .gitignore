@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source zip files
+*.zip
+
+# raw/unprocessed media folders
+/OTH/

@@ -1,0 +1,49 @@
+{
+  "skillGroups": [
+    {
+      "label": "Product Marketing",
+      "color": "#F0E6C8",
+      "description": "GTM strategy, product launches, and positioning - bridging customer insights and revenue. Taken programs from zero to ₹50L+ monthly revenue.",
+      "skills": ["GTM Strategy", "Product Launches", "Positioning & Messaging", "Voice of Customer (VoC)", "Competitive Intelligence", "Market Segmentation", "Pricing Strategy", "Sales Enablement", "A/B Testing", "Demand Generation", "Funnel & Cohort Analysis", "Conversion Optimisation", "User Journey Mapping", "Metabase", "Excel"],
+      "appliedAt": [
+        { "project": "Airtribe", "note": "400+ customer interviews → GenAI program launch → ₹50L+/month. Competitive analysis across 4–5 edtech players, A/B tested messaging → 495 paid enrolments/month." },
+        { "project": "Milaap", "note": "GTM strategy for feature launches (employer matching, verified causes). Launched 2 handbooks → +7% fundraising conversion. In-app & push campaigns: 18% open rate." },
+        { "project": "Airtribe", "note": "Pricing gap analysis via support data → paid cohort deferral program → ₹25L+ incremental monthly revenue." }
+      ]
+    },
+    {
+      "label": "Content & Creative",
+      "color": "#2A2A28",
+      "description": "Owns the content pipeline end-to-end - strategy, scripting, on-camera, editing, and distribution. Scaled brand channels 2–3× across Instagram, LinkedIn, and YouTube.",
+      "skills": ["Content Strategy", "Social Media Growth (Instagram, LinkedIn, YouTube)", "Short-form Video (Reels, Shorts)", "Long-form Production", "Scripting & Copywriting", "Founder-Led Content", "UGC Strategy", "Brand Storytelling", "Content SEO", "Art Direction", "Brand Identity", "DaVinci Resolve", "CapCut / VN", "Figma", "Canva", "HeyGen"],
+      "appliedAt": [
+        { "project": "Airtribe", "note": "On-camera face of the brand - Reels, Shorts, long-form videos, podcasts, testimonials. Instagram 15K → 40K, YouTube 8K → 15K, 7% avg engagement rate." },
+        { "project": "Airtribe", "note": "Founder-led content: scripted, shot, and published LinkedIn content. Founder profile 5K → 12K, brand page 30K → 48K." },
+        { "project": "Eakia", "note": "Art directed the NIGHTAMORE campaign - coordinated models, photographers, stylists → 2,000+ new Instagram followers." },
+        { "project": "Ayat", "note": "Built brand identity from zero - content strategy, visual language, and community storytelling across Instagram and WhatsApp." }
+      ]
+    },
+    {
+      "label": "Marketing & Growth",
+      "color": "#C8DDF0",
+      "description": "Multi-channel campaign execution - email, paid, influencers, push, and WhatsApp - with performance tracking from first touch to conversion.",
+      "skills": ["Multi-channel Campaign Management", "Email Marketing", "Influencer Marketing (Macro & Micro)", "Meta & Google Ads", "Lifecycle Marketing", "Marketing Automation", "WhatsApp Marketing", "SEO & SEM", "PR & Media", "Lead Generation", "Audience Growth", "Performance Analytics", "In-App & Push Notifications", "MailModo", "HubSpot", "WAPI", "Meta Business Suite"],
+      "appliedAt": [
+        { "project": "Airtribe", "note": "16K+ leads/month across email, social, and community. MailModo lifecycle campaigns → 4K+ email leads/month. Peak organic reach: 21.1M views/month." },
+        { "project": "Milaap", "note": "6-figure revenue on a ₹50K ad budget. 50+ influencer collabs, 200+ creatives, 20% follower growth. 50+ in-app/push campaigns: 18% open rate, 6% CTR." },
+        { "project": "Creative House", "note": "Meta ads, influencer marketing, Instagram SEO, and email across 4 D2C and F&B brands. ₹8L+ in offline event sales driven by omnichannel campaigns." }
+      ]
+    },
+    {
+      "label": "Community & Research",
+      "color": "#C8E8C8",
+      "description": "400+ customer interviews, real events, and community systems that turn audiences into advocates - not just followers.",
+      "skills": ["400+ Customer Interviews & Surveys", "Community Building", "Event Marketing", "Offline Events & Pop-ups", "Stakeholder Management", "Cross-functional Collaboration"],
+      "appliedAt": [
+        { "project": "Airtribe", "note": "400+ customer interviews that directly shaped the GenAI program and deferral product. 70+ events (hackathons, meetups, masterclasses) with 7,000+ attendees." },
+        { "project": "Ayat", "note": "Built a community from 0 → 7K+ members through 9+ offline events, WhatsApp groups, and email sequences. Niche audience, deep engagement." },
+        { "project": "Milaap", "note": "7 medical awareness events, 2,000+ attendees. Secured Karnataka & Tamil Nadu government support through stakeholder management." }
+      ]
+    }
+  ]
+}

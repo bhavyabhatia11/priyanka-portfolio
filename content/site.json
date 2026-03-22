@@ -1,0 +1,22 @@
+{
+  "name": "Priyanka Datwani",
+  "title": "Product Marketer & Content Strategist",
+  "tagline": "Your friendly neighbourhood PMM. I run the GTM, script the Reel, and occasionally appear in it.\nDriven by creative demons. Powered by data.",
+  "heroLine1": "Hi, I'm",
+  "heroLine2": "Priyanka.",
+  "heroImage": "/media/priyanka.avif",
+  "closingLine": "That's all folks! Hope to connect with you soon :)",
+  "email": "priyankadatwani99@gmail.com",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/priyanka-datwani/",
+    "instagram": "https://www.instagram.com/priyanka_datwani"
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Work", "href": "/work" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "resume": "https://drive.google.com/your-resume-link",
+  "availableForWork": true
+}
